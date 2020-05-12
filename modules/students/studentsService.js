@@ -3,6 +3,12 @@
 const databaseRef = require('../../config/firebaseConfig').databaseRef;
 const firebaseRef = require('../../config/firebaseConfig').firebaseRef;
 
+/**
+ * @ Function Name      : addStudent
+ * @ Function Params    : 
+ * @param {*} req
+ * @ Function Purpose   : Add new Student
+ */
 let addStudent = async (req) => {
     const ref = databaseRef.ref('student');
 
@@ -26,6 +32,12 @@ let addStudent = async (req) => {
     });
 }
 
+/**
+ * @ Function Name      : getStudent
+ * @ Function Params    : 
+ * @param {*} req
+ * @ Function Purpose   : Get Student by id
+ */
 let getStudent = (req) => {
     const ref = databaseRef.ref(`student/${req.params.id}`);
 
@@ -34,7 +46,12 @@ let getStudent = (req) => {
     });
 }
 
-
+/**
+ * @ Function Name      : getAllStudent
+ * @ Function Params    : 
+ * @param {*} req
+ * @ Function Purpose   : Get all students
+ */
 let getAllStudent = (req) => {
     const ref = databaseRef.ref(`student`);
 
@@ -43,12 +60,24 @@ let getAllStudent = (req) => {
     });
 }
 
+/**
+ * @ Function Name      : deleteStudent
+ * @ Function Params    : 
+ * @param {*} req
+ * @ Function Purpose   : Delete student by id
+ */
 let deleteStudent = (req) => {
     const ref = databaseRef.ref(`student/${req.params.id}`);
 
     return ref.remove();
 }
 
+/**
+ * @ Function Name      : editStudent
+ * @ Function Params    : 
+ * @param {*} req
+ * @ Function Purpose   : Edit student by id
+ */
 let editStudent = (req) => {
     const ref = databaseRef.ref(`student/${req.params.id}`);
 
